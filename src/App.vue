@@ -13,8 +13,10 @@
 			<div class="left">
   			<ul>
   				<li><h3>My Demo</h3></li>
+  				<li><router-link to="/">hello</router-link></li>
   				<li><router-link to="/editorJ">editor</router-link></li>
   				<li><router-link to="/tableJ">tables</router-link></li>
+  				<!--<li><router-link to="/commonDialog">modal</router-link></li>-->
   			</ul>
 			</div>
 	  	<div class="right">
@@ -27,17 +29,13 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-
+import modal from './components/commonDialog'
 export default {
   name: 'app',
   data(){
   	return {
-  		
+  		showModal: false
   	}
-  },
-  components: {
-    HelloWorld
   }
 }
 </script>

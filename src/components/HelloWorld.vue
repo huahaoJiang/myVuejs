@@ -18,16 +18,28 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    <button id="show-modal" @click="showModal = true">Show Modal</button>
+	  <modal modal-style="600px"  v-if=	"showModal" @close="showModal = false">
+	    <h3 slot="header">custom header</h3>
+	  </modal>
   </div>
 </template>
 
 <script>
+import modal from './commonDialog'
 export default {
-  name: 'HelloWorld',
+  name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js Apphahahaha'
+      msg: 'Welcome to Your Vue.js Apphahahaha',
+      showModal: false,
+      /*modal:{
+      	modalStyle: "600px"
+      }*/
     }
+  },
+  components: {
+    modal
   }
 }
 </script>
