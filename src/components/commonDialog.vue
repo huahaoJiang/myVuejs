@@ -1,24 +1,24 @@
 <template>
-	  <transition name="modal">
-	    <div class="modal-mask" id="modal-template">
-	      <div class="modal-wrapper">
-	        <div class="modal-container" :style="{ width: modalStyle }">
-	          <div class="modal-header">
+	  <transition name="dialog">
+	    <div class="dialog-mask" id="dialog-template">
+	      <div class="dialog-wrapper">
+	        <div class="dialog-container" :style="{ width: dialogStyle }">
+	          <div class="dialog-header">
 	            <slot name="header">
 	              default header
 	            </slot>
 	          </div>
 	
-	          <div class="modal-body">
+	          <div class="dialog-body">
 	            <slot name="body">
 	              default body
 	            </slot>
 	          </div>
 	
-	          <div class="modal-footer">
+	          <div class="dialog-footer">
 	            <slot name="footer">
 	              default footer
-	              <button class="modal-default-button" @click="$emit('close')">
+	              <button class="dialog-default-button" @click="$emit('close')">
 	                OK
 	              </button>
 	            </slot>
@@ -30,19 +30,19 @@
 </template>
 <script>
 	/*import Vue from 'vue'
-  Vue.component('modal', {
-  	props: ['modalStyle'],
-	  template: '#modal-template'
+  Vue.component('dialog', {
+  	props: ['dialogStyle'],
+	  template: '#dialog-template'
 	})*/
   export default {
-	  name: 'modal',
-	  props: ['modalStyle']
+	  name: 'dialog',
+	  props: ['dialogStyle']
 	}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-.modal-mask {
+.dialog-mask {
   position: fixed;
   z-index: 9998;
   top: 0;
@@ -55,12 +55,12 @@
   text-align: left;
 }
 
-.modal-wrapper {
+.dialog-wrapper {
   display: table-cell;
   vertical-align: middle;
 }
 
-.modal-container {
+.dialog-container {
   width: 300px;
   margin: 0px auto;
   padding: 20px 30px;
@@ -71,38 +71,38 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 
-.modal-mask .modal-header h3 {
+.dialog-mask .dialog-header h3 {
   margin-top: 0;
   color: #42b983;
 }
 
-.modal-mask .modal-body {
+.dialog-mask .dialog-body {
   margin: 20px 0;
 }
 
-.modal-default-button {
+.dialog-default-button {
   float: right;
 }
 
 /*
  * The following styles are auto-applied to elements with
- * transition="modal" when their visibility is toggled
+ * transition="dialog" when their visibility is toggled
  * by Vue.js.
  *
- * You can easily play with the modal transition by editing
+ * You can easily play with the dialog transition by editing
  * these styles.
  */
 
-.modal-enter {
+.dialog-enter {
   opacity: 0;
 }
 
-.modal-leave-active {
+.dialog-leave-active {
   opacity: 0;
 }
 
-.modal-enter .modal-container,
-.modal-leave-active .modal-container {
+.dialog-enter .dialog-container,
+.dialog-leave-active .dialog-container {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }

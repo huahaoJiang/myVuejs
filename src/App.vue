@@ -29,7 +29,6 @@
 </template>
 
 <script>
-import modal from './components/commonDialog'
 export default {
   name: 'app',
   data(){
@@ -75,12 +74,12 @@ export default {
 }
 .left-top{
 	padding: 10px 45px;
-	width: 15%;
+	width: 20%;
 	float: left;
 }
 .right-top{
 	padding: 10px 75px;
-	width: 66%;
+	width: 80%;
 	float: left;
 }
 .right{
