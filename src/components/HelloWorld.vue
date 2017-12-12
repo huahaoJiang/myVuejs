@@ -21,6 +21,7 @@
     <button id="show-modal" @click="showModal = true">Show Modal</button>
 	  <modal dialog-style="600px"  v-if=	"showModal" @close="showModal = false">
 	    <h3 slot="header">custom header</h3>
+	    <h3 slot="body">确认显示吗？</h3>
 	  </modal>
   </div>
 </template>
